@@ -21,6 +21,14 @@ function App() {
           <Link to='/usuario'>Usuario</Link>
         </nav>
 
+        <nav className='c-menu-movil'>
+         <Link to='/'>Home</Link>
+          <Link to='/favorito'>Favorito</Link>
+          <Link to='/original'>Original</Link>
+          <Link to='/informativa'>Informativa</Link>
+          <Link to='/usuario'>Usuario</Link>
+        </nav>
+
         <Routes>
           <Route path='/'element={<Home/>} />
           <Route path='/favorito'element={<Favorito/> } />
