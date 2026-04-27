@@ -1,0 +1,71 @@
+.tabla-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.tabla-container h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #d4af37;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d4af37;
+    padding-bottom: 8px;
+}
+
+.tabla-container p {
+    text-align: center;
+    color: #8a7a3a;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.tabla-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.tabla-container thead tr {
+    border-bottom: 2px solid #d4af37;
+}
+
+.tabla-container th {
+    padding: 12px 15px;
+    text-align: left;
+    color: #d4af37;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.tabla-container td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #2a2a2a;
+    color: #c0c0c0;
+    font-size: 0.95rem;
+}
+
+.tabla-container tbody tr:hover {
+    background-color: #1a1a1a;
+}
+
+.tabla-container a {
+    color: #d4af37;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.tabla-container a:hover {
+    color: #f0d060;
+    text-decoration: underline;
+}
+
+.tabla-container strong {
+    color: #d4af37;
+}

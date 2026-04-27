@@ -3,7 +3,8 @@ import Original from './Original'
 import Home from './Home'
 import Favorito from './Favorito'
 import Informativa from './Informativa'
-import Usuario from './Usuario'
+import Usuario from './Usuario';
+import Personaje from './Personaje';
 import './App.css'
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='/original'element={<Original/> } />
           <Route path='/informativa'element={<Informativa/> } />
           <Route path='/usuario'element={<Usuario/> } />
+          <Route path='/personaje/:id' element={<Personaje/>} />
         </Routes>
 
       </Router>
@@ -34,3 +36,4 @@ function App() {
 }
 
 export default App
+

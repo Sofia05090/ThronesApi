@@ -1,0 +1,108 @@
+.tabla-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.tabla-container h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #d4af37;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #d4af37;
+    padding-bottom: 10px;
+}
+
+.perfil-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.perfil-form label {
+    color: #d4af37;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.perfil-form input,
+.perfil-form select {
+    background-color: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    color: #c0c0c0;
+    padding: 10px;
+    border-radius: 4px;
+    outline: none;
+    font-size: 0.95rem;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.perfil-form input:focus,
+.perfil-form select:focus {
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 5px #d4af37;
+}
+
+.perfil-form input::placeholder {
+    color: #777;
+}
+
+.perfil-botones {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.perfil-botones button {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #d4af37;
+    background-color: transparent;
+    color: #d4af37;
+    cursor: pointer;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+}
+
+.perfil-botones button:hover {
+    background-color: #d4af37;
+    color: #0e0e0e;
+}
+
+.perfil-form p {
+    text-align: center;
+    color: #8a7a3a;
+    font-style: italic;
+}
+
+.perfil-preview {
+    border-top: 1px solid #2a2a2a;
+    padding-top: 20px;
+}
+
+.perfil-preview h3 {
+    text-align: center;
+    color: #d4af37;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.perfil-preview p {
+    color: #c0c0c0;
+    margin-bottom: 10px;
+}
+
+.perfil-preview strong {
+    color: #d4af37;
+}
+
+.perfil-preview img {
+    margin-top: 10px;
+    border-radius: 50%;
+    border: 2px solid #d4af37;
+    display: block;
+}
