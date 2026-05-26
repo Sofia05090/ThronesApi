@@ -1,4 +1,8 @@
 import { useState, useEffect } from 'react';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase';
+import { useNavigate } from 'react-router';
+import { useAuth } from '../AuthContext';
 import "./style.css"
 
 interface Character {
@@ -16,6 +20,9 @@ interface Perfil {
 
 function Usuario() {
 
+    const { user } = useAuth()
+    const navigate = useNavigate()
+
     const [characters, setCharacters] = useState<Character[]>([])
     const [perfil, setPerfil] = useState<Perfil>({
         nombre: '',
@@ -24,7 +31,6 @@ function Usuario() {
     })
     const [guardado, setGuardado] = useState(false)
 
-    // Cargar personajes y perfil guardado
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -38,7 +44,6 @@ function Usuario() {
 
         fetchData()
 
-        // Cargar perfil desde localStorage
         const perfilGuardado = JSON.parse(localStorage.getItem('perfil') || 'null')
         if (perfilGuardado) {
             setPerfil(perfilGuardado)
@@ -46,13 +51,12 @@ function Usuario() {
 
     }, []);
 
-    // Familias únicas desde la API
     const familias = [...new Set(characters.map((char) => char.family || 'Sin familia'))]
 
     const handleGuardar = () => {
         localStorage.setItem('perfil', JSON.stringify(perfil))
         setGuardado(true)
-        setTimeout(() => setGuardado(false), 2000) // oculta el mensaje después de 2 segundos
+        setTimeout(() => setGuardado(false), 2000)
     }
 
     const handleLimpiar = () => {
@@ -62,7 +66,11 @@ function Usuario() {
         setGuardado(false)
     }
 
-    // Personaje favorito seleccionado
+    const handleLogout = async () => {
+        await signOut(auth)
+        navigate('/login')
+    }
+
     const personajeFavoritoData = characters.find(
         (char) => char.fullName === perfil.personajeFavorito
     )
@@ -71,6 +79,14 @@ function Usuario() {
         <>
             <div className="tabla-container">
                 <h2>Mi Perfil</h2>
+
+                {/* Info del usuario de Firebase */}
+                {user && (
+                    <div className="perfil-firebase">
+                        <p><strong>Usuario:</strong> {user.displayName || user.email}</p>
+                        <button onClick={handleLogout}>Cerrar Sesión</button>
+                    </div>
+                )}
 
                 {/* Formulario */}
                 <div className="perfil-form">
@@ -110,11 +126,11 @@ function Usuario() {
                         <button onClick={handleLimpiar}>Limpiar</button>
                     </div>
 
-                    {guardado && <p> Perfil guardado correctamente</p>}
+                    {guardado && <p>Perfil guardado correctamente</p>}
 
                 </div>
 
-                {/* Vista previa del perfil */}
+                {/* Vista previa */}
                 {perfil.nombre && (
                     <div className="perfil-preview">
                         <h3>Bienvenido, {perfil.nombre}</h3>
@@ -129,15 +145,13 @@ function Usuario() {
                                 <img
                                     src={personajeFavoritoData.imageUrl}
                                     alt={personajeFavoritoData.fullName}
-                                    width={100}
+                                    width={200}
                                 />
                             </div>
                         )}
                     </div>
                 )}
 
-
-                
             </div>
         </>
     );

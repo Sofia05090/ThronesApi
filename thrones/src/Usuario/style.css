@@ -106,3 +106,59 @@
     border: 2px solid #d4af37;
     display: block;
 }
+/* ===== FIREBASE USER ===== */
+.perfil-firebase {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border: 1px solid #2a2a2a;
+    background-color: #1a1a1a;
+    margin-bottom: 30px;
+}
+
+.perfil-firebase p {
+    color: #c0c0c0;
+    font-size: 0.95rem;
+}
+
+.perfil-firebase p strong {
+    color: #d4af37;
+    margin-right: 8px;
+}
+
+.perfil-firebase button {
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 1px solid #c0392b;
+    color: #c0392b;
+    font-family: 'Georgia', serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.perfil-firebase button:hover {
+    background-color: #c0392b;
+    color: #0e0e0e;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+    .tabla-container {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .perfil-firebase {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .perfil-preview img {
+        margin: 10px auto 0;
+    }
+}

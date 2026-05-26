@@ -10,6 +10,7 @@ body {
     font-family: 'Georgia', serif;
 }
 
+/* ===== MENU DESKTOP ===== */
 .c-menu {
     display: flex;
     justify-content: center;
@@ -40,52 +41,94 @@ body {
     background-color: #1a1a1a;
 }
 
+/* ===== OCULTAR EN DESKTOP ===== */
+.c-menu-movil {
+    display: none;
+}
+
+.hamburguesa {
+    display: none;
+}
+
+.overlay {
+    display: none;
+}
+
+.c-menu-lateral {
+    display: none;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
 
     .c-menu {
         display: none;
     }
 
-    .c-menu-movil {
+    .hamburguesa {
         display: flex;
         position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        top: 15px;
+        right: 15px;
+        z-index: 200;
         background-color: #0e0e0e;
-        border-top: 2px solid #d4af37;
-        z-index: 100;
-    }
-
-    .c-menu-movil a {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
+        border: 1px solid #d4af37;
+        color: #d4af37;
+        font-size: 1.5rem;
+        width: 45px;
+        height: 45px;
         align-items: center;
         justify-content: center;
-        padding: 10px 0;
+        cursor: pointer;
+    }
+
+    .overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 150;
+    }
+
+    .c-menu-lateral {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        background-color: #0e0e0e;
+        border-left: 2px solid #d4af37;
+        z-index: 175;
+        padding-top: 80px;
+        transition: right 0.3s ease;
+    }
+
+    .c-menu-lateral.abierto {
+        right: 0;
+    }
+
+    .c-menu-lateral a {
         color: #d4af37;
         text-decoration: none;
-        font-size: 0.6rem;
-        letter-spacing: 1px;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
         text-transform: uppercase;
-        gap: 4px;
+        padding: 18px 25px;
+        border-bottom: 1px solid #2a2a2a;
+        display: flex;
+        align-items: center;
+        gap: 12px;
         transition: background-color 0.2s ease;
     }
 
-    .c-menu-movil a:hover {
+    .c-menu-lateral a:hover {
         background-color: #1a1a1a;
-    }
-
-    .c-menu-movil a span.icono {
-        font-size: 1.3rem;
+        color: #f0d060;
     }
 
     body {
         padding-bottom: 70px;
     }
-}
-
-.c-menu-movil {
-    display: none;
 }
